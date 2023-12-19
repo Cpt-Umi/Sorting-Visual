@@ -1,6 +1,8 @@
 import { Box, Button } from "@mui/material";
 import { useState } from "react";
-import Bubblesort from "./algorithms/bubbleSort";
+import BubbleSort from "./algorithms/bubbleSort";
+import SelectionSort from "./algorithms/selectionSort";
+import InsertionSort from "./algorithms/insertionSort";
 
 function Visualizer() {
   const [array, setArray] = useState<number[]>([]);
@@ -35,10 +37,18 @@ function Visualizer() {
         </Button>
         <Button
           variant="outlined"
+          color="error"
+          onClick={() => window.location.reload()}
+          // disabled={active}
+          sx={{ margin: "10px", height: "100%", fontWeight: "bold" }}
+        >
+          Reset
+        </Button>
+        <Button
+          variant="outlined"
           color="primary"
           onClick={() => {
-            Bubblesort({ array, setArray, setActive });
-            // console.log("Meow...", array);
+            BubbleSort({ array, setArray, setActive });
           }}
           sx={{ margin: "10px", height: "100%", fontWeight: "bold" }}
         >
@@ -48,11 +58,21 @@ function Visualizer() {
           variant="outlined"
           color="primary"
           onClick={() => {
-            // console.log("Meow...", array);
+            SelectionSort({ array, setArray, setActive });
           }}
           sx={{ margin: "10px", height: "100%", fontWeight: "bold" }}
         >
           Selection Sort
+        </Button>
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={() => {
+            InsertionSort({ array, setArray, setActive });
+          }}
+          sx={{ margin: "10px", height: "100%", fontWeight: "bold" }}
+        >
+          Insertion Sort
         </Button>
       </Box>
       <Box

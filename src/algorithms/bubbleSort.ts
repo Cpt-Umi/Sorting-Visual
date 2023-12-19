@@ -10,7 +10,7 @@ type Props = {
   setActive: Dispatch<SetStateAction<boolean>>;
 };
 
-async function Bubblesort({ array, setArray, setActive }: Props) {
+async function BubbleSort({ array, setArray, setActive }: Props) {
   let auxArr = array;
   let flag = false;
   setActive(true);
@@ -35,4 +35,4 @@ async function Bubblesort({ array, setArray, setActive }: Props) {
   // console.log(array);
 }
 
-export default Bubblesort;
+export default BubbleSort;
